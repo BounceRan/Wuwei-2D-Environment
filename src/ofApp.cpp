@@ -8,7 +8,7 @@ void ofApp::setup(){
     font.load("arial.ttf",20);
     pirNumber=0;
     
-    myArd.connect("/dev/cu.usbmodemfd121", 9600);
+    myArd.connect("/dev/cu.usbmodem1461", 9600);
     
     
     ofAddListener(myArd.EInitialized,this, &ofApp::setupArduino);
@@ -124,7 +124,7 @@ void ofApp::update(){
         //ofSetColor(ofRandom(100,255), 0, ofRandom(100,255));
         
       
-        vsound=ofLerp(vsound, .5, .1);
+        vsound=ofLerp(vsound, .8, .1);
         
         baseNode.pan(ofRandom(0, 1));
         baseNode.tilt(ofRandom(0, 1));
@@ -228,8 +228,8 @@ void ofApp::colorChangeFunction(int x, int y){
 //    colorCh3=ofMap(colorCh1, 0, x, 180, 20);
 //    colorLine=ofMap(colorCh1,0,x,140,50);
     //Light and Dark Line
-    colorCh2=ofMap(colorCh1, 0, x, 5, 180);
-    colorCh3=ofMap(colorCh1, 0, x, 180, 5);
+    colorCh2=ofMap(colorCh1, 0, x, 5, 140);
+    colorCh3=ofMap(colorCh1, 0, x, 140, 5);
     colorLine=ofMap(colorCh1,0,x,200,110);
     
 }
@@ -240,6 +240,7 @@ void ofApp::soundPlayerFunction(){
     bgsound.load("bgSound.mp3");
     bgsound.setLoop(true);
     bgsound.play();
+    bgsound.setVolume(.5);
     fxsound.load("fxSound.mp3");
     fxsound.setLoop(true);
     fxsound.play();
@@ -277,7 +278,7 @@ void ofApp::draw(){
     
     //print out arduino state-------------------------------------------
     if(!ISetupArduino) {
-        //font.drawString("arduino is not ready.....\n", 400, 500);
+        font.drawString("arduino is not ready.....\n", 400, 500);
     }else{
         //font.drawString( pirState,420,500 );
     }
