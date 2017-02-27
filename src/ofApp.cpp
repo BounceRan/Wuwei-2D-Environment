@@ -8,7 +8,7 @@ void ofApp::setup(){
     font.load("arial.ttf",20);
     pirNumber=0;
     
-    myArd.connect("/dev/cu.usbmodem1461", 9600);
+    myArd.connect("/dev/cu.usbmodem1441", 9600);
     
     
     ofAddListener(myArd.EInitialized,this, &ofApp::setupArduino);
