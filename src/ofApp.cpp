@@ -1,3 +1,13 @@
+//------By dan ran 2017
+//--MIT License
+/*
+ 
+ 
+ Everything has a path. The moving dot follows its journey along the path in infinite loop.
+ The dot and its movement symbolizes the circulation of nature. A minor disturbance will cause a huge change. Once the change has been made, the dot can never go to its original path. However, the system will assign it a new path, every time after disturbance. Just as nature, it will finally find its balance after human disturbance. This piece expands the idea of action without action. The audience can choose how they interact with this piece. They can celebrate in the chaos, or appreciate the peace of the circulation.I hope at the end of the day, the audience can see the beauty of the harmony without disturbance.
+ 
+ */
+
 #include "ofApp.h"
 
 //--------------------------------------------------------------
@@ -227,10 +237,14 @@ void ofApp::colorChangeFunction(int x, int y){
 //    colorCh2=ofMap(colorCh1, 0, x, 20, 180);
 //    colorCh3=ofMap(colorCh1, 0, x, 180, 20);
 //    colorLine=ofMap(colorCh1,0,x,140,50);
-    //Light and Dark Line
-    colorCh2=ofMap(colorCh1, 0, x, 5, 140);
-    colorCh3=ofMap(colorCh1, 0, x, 140, 5);
-    colorLine=ofMap(colorCh1,0,x,200,110);
+    //Light and Dark Line ----origin
+    colorCh2=ofMap(colorCh1, 0, x, 5, 90);
+    colorCh3=ofMap(colorCh1, 0, x, 90, 5);
+    //---------
+    //colorCh2=ofMap(colorCh1, 0, x, 0, 20);
+    //colorCh3=ofMap(colorCh1, 0, x, 20, 0);
+    
+    colorLine=ofMap(colorCh1,0,x,200,100);
     
 }
 
@@ -263,13 +277,13 @@ void ofApp::draw(){
     
     
    //ofBackground(20);
+    ofHideCursor();
     
-    
-    ofColor colorOne(colorCh2,.9);
+    ofColor colorOne(colorCh2,.1);
     ofColor colorTwo(colorCh3);
     //ofBackgroundGradient(colorOne, colorTwo,OF_GRADIENT_CIRCULAR);
-    ofBackgroundGradient(colorTwo, colorOne,OF_GRADIENT_LINEAR);
-     //ofBackgroundGradient(colorOne, colorTwo,OF_GRADIENT_LINEAR);
+    //ofBackgroundGradient(colorTwo, colorOne,OF_GRADIENT_LINEAR);
+     ofBackgroundGradient(colorOne, colorTwo,OF_GRADIENT_LINEAR);
    // ofBackgroundGradient(colorOne, colorTwo,OF_GRADIENT_BAR);
 
     
