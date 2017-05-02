@@ -79,7 +79,7 @@ void ofApp::update(){
         
        
         
-        vsound=ofLerp(vsound, 0, .01);
+        vsound=ofLerp(vsound, 0, .1);
     
         
         // ----------------- 3dform
@@ -134,7 +134,7 @@ void ofApp::update(){
         //ofSetColor(ofRandom(100,255), 0, ofRandom(100,255));
         
       
-        vsound=ofLerp(vsound, .8, .1);
+        vsound=ofLerp(vsound, 1.5, .1);
         
         baseNode.pan(ofRandom(0, 1));
         baseNode.tilt(ofRandom(0, 1));
